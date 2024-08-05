@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!--
+웹 브라우저는 인터프리터(해석기)로 코드를 해석하고 실행한다.
+인터프리터는 Just-In-Time 형식(코드를 읽어 해석하고 바로 실행) 으로 실행한다.  (240708 메모)
+
+<:꺽쇠
+html : 요소명
+<요소명> : 태그
+lang : 속성 (attribute)
+"ko" : 속성값 (attribute value)
+<html lang="ko"> : 시작 태크
+</html> : 끝 태크
+<html lang="ko"></html> : 요소(박스)
+※ 요소는 부모 요소와 자식 요소로 구성된다.
+    ->  주 내용은 자식 요소에 치중되어 있음 
+※ 태크는 부모 요소로 사용하거나 웹 콘텐츠를 저정하는 용도로 사용된다.
+※ 단일 태그는 끝 태그가 없다. (ex. <input> )
+-->
+    <style>
+        .box {
+            display:grid;
+            align-items:center;justify-content: space-around;
+            background: skyblue;
+            border-radius: 30px;
+            box-shadow: 5px 5px 15px #333
+            
+        }
+    </style>
+    <!-- 
+     style 태그 클래스 선택자는 [.클래스명] 으로 설정 
+    -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+            $(function(){
+                $('#btn').click(function(){
+                    $('#hong').css('background','#fc0');
+                });
+
+                $('#name').change(function(){
+                    console.log($('#name').val());     
+                });
+            });
+        </script>
+        <!--
+        jQuery 2버전 이상은 호환성이 매우 낮음
+       함수 적용 시,  id 선택자는 ['#선택자명(id)'] 로 설정
+         -> Ex) ('#btn') - 이벤트 대상
+        
+         function 과 method 와의 차이점 복습 필요
+         ready(); - 함수이므로 유의 필요
+         console.# 함수 복습 필요
+        -->
+</head>
+<body>
+    <div id="hong" class="box">
+    <!--
+     div : 관계(부모, 자식) 설정 요소
+       -> div 를 설정하지 않으면 레이아웃 변경 불가
+    "box" : 선택자명(이름?)
+    -->
+        <h2>천재 목록</h2>
+        <p>홍길동, 세종대왕</p>
+    </div>
+    <button id="btn">CLICK</button>
+    <input type="text"  id="name">
+
+
+
+</body>
+</html>
